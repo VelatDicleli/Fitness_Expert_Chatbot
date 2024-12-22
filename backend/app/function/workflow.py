@@ -13,7 +13,7 @@ from langchain_pinecone import PineconeVectorStore
 
 def chatbot(message):
     
-    pc = Pinecone(api_key="pcsk_7Dc8Nt_LqNY3wuGjuh6ATAfPBF51n9ptrjdPkMtXGuBXAjCXNpcG2ZYmTwNdBqf5LLKuBy")
+    pc = Pinecone(api_key="")
 
     index = pc.Index("sport")
     
@@ -36,7 +36,7 @@ def chatbot(message):
     )
 
 
-    llm = ChatGroq(model="mixtral-8x7b-32768",api_key="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")
+    llm = ChatGroq(model="mixtral-8x7b-32768",api_key="")
 
     document_chain = create_stuff_documents_chain(llm,prompt)
     retriever_chain = create_retrieval_chain(retriever,document_chain)
